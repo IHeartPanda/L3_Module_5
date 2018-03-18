@@ -18,9 +18,25 @@ public class TestMatchingBrackets {
 
 	// USE A STACK TO COMPLETE THE METHOD FOR CHECKING IF EVERY OPENING BRACKET HAS
 	// A MATCHING CLOSING BRACKET
-	private boolean doBracketsMatch(String b) {
 
-		return false;
+	private boolean doBracketsMatch(String b) {
+		int num = 0;
+		for (int i = 0; i < b.length(); i++) {
+			if (b.charAt(i) == '{') {
+				num++;
+				
+			} else {
+				num--;
+				if (num < 0) {
+					return false;
+				}
+			}
+		}
+		if (num == 0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 }
